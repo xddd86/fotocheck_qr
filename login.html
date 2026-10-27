@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión | Colegio Newton</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase.js" defer></script>
+<script src="login.js" defer></script>
+</head>
+<body class="pagina-login">
+
+    <main class="login-contenedor">
+        <section class="login-marca">
+            <div class="logo">N</div>
+            <p class="marca-superior">PLATAFORMA ESCOLAR</p>
+            <h1>Colegio Newton</h1>
+            <p class="marca-descripcion">
+                Sistema inteligente de asistencia y gestión escolar.
+            </p>
+        </section>
+
+        <section class="login-tarjeta">
+            <span class="etiqueta">ACCESO SEGURO</span>
+            <h2>Bienvenido</h2>
+            <p class="login-descripcion">
+                Ingresa con tu cuenta del personal autorizado.
+            </p>
+
+            <form id="formulario-login">
+                <label for="correo">Correo electrónico</label>
+                <input
+                    type="email"
+                    id="correo"
+                    placeholder="personal@colegionewton.edu.pe"
+                    autocomplete="username"
+                    required
+                >
+
+                <label for="contrasena">Contraseña</label>
+                <input
+                    type="password"
+                    id="contrasena"
+                    placeholder="Ingresa tu contraseña"
+                    autocomplete="current-password"
+                    required
+                >
+
+                <button type="submit" id="boton-login">
+                    Iniciar sesión
+                    <span>→</span>
+                </button>
+
+                <p id="mensaje-login" role="status" aria-live="polite"></p>
+            </form>
+
+            <div class="login-seguridad">
+                <span>◆</span>
+                Acceso exclusivo para personal autorizado
+            </div>
+        </section>
+
+        <footer class="login-footer">
+            © Colegio Newton · Sistema de gestión escolar
+        </footer>
+    </main>
+
+   
+</body>
+</html>

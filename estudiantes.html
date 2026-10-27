@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#10152b">
+    <title>Gestión de estudiantes | Colegio Newton</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="supabase.js" defer></script>
+    <script src="estudiantes.js" defer></script>
+</head>
+<body>
+    <main class="modulo">
+        <a href="panel.html" class="volver-panel">← Volver al panel</a>
+
+        <header class="encabezado-modulo">
+            <span class="etiqueta">COLEGIO NEWTON</span>
+            <h1>Gestión de estudiantes</h1>
+            <p>Consulta estudiantes y genera los QR para sus fotochecks.</p>
+        </header>
+
+        <section class="tarjeta-modulo">
+            <h2>Buscar estudiante</h2>
+
+            <form id="formulario-estudiantes">
+                <label for="buscar-estudiante">Nombre, apellido o código</label>
+
+                <div class="campo-busqueda">
+                    <input
+                        type="search"
+                        id="buscar-estudiante"
+                        name="buscar-estudiante"
+                        placeholder="Ej. NEW-000001"
+                        autocomplete="off"
+                    >
+                    <button type="submit">Buscar</button>
+                </div>
+            </form>
+
+            <p id="mensaje-estudiantes" class="mensaje-modulo" aria-live="polite"></p>
+        </section>
+
+        <section class="tarjeta-modulo">
+            <h2>Lista de estudiantes</h2>
+
+            <div class="tabla-contenedor">
+                <table class="tabla-estudiantes">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Estudiante</th>
+                            <th>Grado</th>
+                            <th>Sección</th>
+                            <th>Estado</th>
+                            <th>QR del fotocheck</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="lista-estudiantes">
+                        <tr>
+                            <td colspan="6">Cargando estudiantes...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="acciones-modulo">
+                <button type="button" id="boton-ver-mas" hidden>
+                    Ver más
+                </button>
+            </div>
+        </section>
+
+        <section class="tarjeta-modulo">
+            <h2>Personal autorizado</h2>
+            <p>Esta sección permitirá consultar y administrar las cuentas del personal según los permisos asignados.</p>
+            <p id="mensaje-personal" class="mensaje-modulo" aria-live="polite"></p>
+            <div id="lista-personal"></div>
+        </section>
+    </main>
+</body>
+</html>

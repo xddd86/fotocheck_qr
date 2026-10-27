@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#10152b">
+    <title>Control de asistencia | Colegio Newton</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase.js" defer></script>
+    <script src="asistencia.js" defer></script>
+</head>
+<body>
+    <main class="modulo">
+        <a href="panel.html" class="volver-panel">← Volver al panel</a>
+
+        <header class="encabezado-modulo">
+            <span class="etiqueta">COLEGIO NEWTON</span>
+            <h1>Control de asistencia</h1>
+            <p>Busca al estudiante y confirma su asistencia.</p>
+        </header>
+
+        <section class="tarjeta-modulo">
+            <h2>Escanear código QR</h2>
+            <p>Utiliza la cámara de tu dispositivo para leer el código del estudiante.</p>
+            <div id="lector-qr" class="lector-qr">
+                <span>La cámara aparecerá aquí</span>
+            </div>
+            <div class="acciones-modulo">
+                <button type="button" id="boton-camara">Activar cámara</button>
+                <button type="button" id="boton-detener-camara" class="boton-secundario">Detener cámara</button>
+            </div>
+            <p id="mensaje-camara" class="mensaje-modulo" aria-live="polite"></p>
+        </section>
+
+        <section class="tarjeta-modulo">
+            <h2>Buscar estudiante</h2>
+            <form id="formulario-busqueda">
+                <label for="codigo">Código del estudiante</label>
+                <div class="campo-busqueda">
+                    <input type="text" id="codigo" name="codigo" placeholder="Ej. CN001" autocomplete="off" required>
+                    <button type="submit" id="boton-buscar">Buscar</button>
+                </div>
+            </form>
+            <p id="mensaje-busqueda" class="mensaje-modulo" aria-live="polite"></p>
+        </section>
+
+        <section id="resultado-estudiante" class="tarjeta-modulo" hidden>
+            <h2>Datos del estudiante</h2>
+            <div id="datos-estudiante" class="datos-estudiante"></div>
+            <button type="button" id="boton-registrar">Confirmar asistencia</button>
+            <p id="mensaje-registro" class="mensaje-modulo" aria-live="polite"></p>
+        </section>
+    </main>
+</body>
+</html>
